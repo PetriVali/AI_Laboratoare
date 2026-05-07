@@ -54,7 +54,7 @@ print(f"Eroarea pătratică medie (MSE): {mse:.2f}")
 #8
 xx = df[['bmi', 'bp']]
 yy = diabetes.target
-X_train, X_test, y_train, y_test = train_test_split(xx, yy, test_size=0.2)
+X_train, X_test, y_train, y_test = train_test_split(xx, yy, test_size=0.2,random_state=50)
 model_2 = LinearRegression()
 model_2.fit(X_train, y_train)
 y_pred_2 = model_2.predict(X_test)
