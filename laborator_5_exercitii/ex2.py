@@ -5,10 +5,12 @@ iris = load_iris()
 X = iris.data
 Y = iris.target
 
-print("Exercitiu 2")
 X_train, X_test, Y_train, Y_test = train_test_split(
     X, Y, test_size=0.2, random_state=42
 )
-print("Forma setului de antrenare: ", X_train.shape, Y_train.shape)
-print("Forma setului de testare: ", X_test.shape, Y_test.shape)
-print("--" * 20)
+
+print("Exercitiul 2 - Impartirea setului in antrenare si testare")
+print("Forma X_train:", X_train.shape)
+print("Forma X_test:", X_test.shape)
+print("Forma Y_train:", Y_train.shape)
+print("Forma Y_test:", Y_test.shape)

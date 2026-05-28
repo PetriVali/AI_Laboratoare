@@ -24,6 +24,10 @@ for k in k_values:
     acc = knn.score(X_test_scaled, Y_test)
     accuracies.append(acc)
 
+print("Exercitiul 5 - Impactul valorii k")
+for k, acc in zip(k_values, accuracies):
+    print(f"k = {k:2d} -> acuratete = {acc:.2f}")
+
 plt.plot(k_values, accuracies, marker="o")
 plt.title("Acuratetea KNN in functie de k")
 plt.xlabel("Valoarea lui k")
@@ -32,8 +36,9 @@ plt.xticks(list(k_values))
 plt.grid()
 plt.show()
 
-optimal_k = list(k_values)[accuracies.index(max(accuracies))]
+max_accuracy = max(accuracies)
+optimal_k_values = [k for k, acc in zip(k_values, accuracies) if acc == max_accuracy]
 print(
-    f"Valoarea optima a lui k este: {optimal_k} "
-    f"cu acuratetea de {max(accuracies):.2f}"
+    f"\nValorile optime par a fi {optimal_k_values}, deoarece obtin "
+    f"cea mai mare acuratete pe setul de testare: {max_accuracy:.2f}."
 )

@@ -1,0 +1,8 @@
+Incarcati si normalizati datele din MNIST.
+Creati un model Sequential care sa includa un strat Flatten si doua straturi Dense.
+Antrenati modelul cateva epoci si evaluati-l pe setul de test.
+Afisati o imagine din setul de test si predictia oferita de model.
+Modificati numarul de neuroni din stratul ascuns si observati ce se schimba.
+Testati cu un alt numar de epoci (mai mic sau mai mare).
+Schimbati functia de activare din relu in tanh.
+Inlocuiti setul de date mnist cu fashion_mni

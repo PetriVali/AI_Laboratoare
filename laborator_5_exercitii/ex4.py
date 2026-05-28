@@ -17,4 +17,6 @@ X_test_scaled = scaler.transform(X_test)
 knn = KNeighborsClassifier(n_neighbors=3)
 knn.fit(X_train_scaled, Y_train)
 accuracy = knn.score(X_test_scaled, Y_test)
-print("Acuratetea modelului KNN pe setul de testare: ", accuracy)
+
+print("Exercitiul 4 - Construirea si antrenarea modelului KNN")
+print(f"Acuratetea modelului KNN pentru k = 3: {accuracy:.2f}")

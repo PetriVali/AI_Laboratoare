@@ -21,8 +21,23 @@ knn = KNeighborsClassifier(n_neighbors=3)
 knn.fit(X_train_scaled, Y_train)
 Y_pred = knn.predict(X_test_scaled)
 cm = confusion_matrix(Y_test, Y_pred)
-print("Matricea de confuzie: ")
+
+print("Exercitiul 6 - Evaluarea modelului")
+print("Matricea de confuzie:")
 print(cm)
 report = classification_report(Y_test, Y_pred, target_names=targets)
-print("Raport de clasificare: ")
+print("\nRaport de clasificare:")
 print(report)
+
+corect_pe_clasa = cm.diagonal()
+total_pe_clasa = cm.sum(axis=1)
+rate_pe_clasa = corect_pe_clasa / total_pe_clasa
+cea_mai_buna_rata = rate_pe_clasa.max()
+cele_mai_bune_clase = targets[rate_pe_clasa == cea_mai_buna_rata]
+
+print(
+    "Clasa/clasele cel mai bine prezise: "
+    f"{', '.join(cele_mai_bune_clase)}. "
+    "Acestea au cea mai mare rata de clasificare corecta in matricea "
+    "de confuzie."
+)
